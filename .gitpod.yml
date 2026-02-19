@@ -1,14 +1,12 @@
-image: gitpod/workspace-node-18
+image: gitpod/workspace-full
 
 tasks:
   - name: Install ServiceNow CLI
+    # The 'init' phase runs during workspace prebuilds, saving you time on startup.
     init: |
-      wget https://github.com/ServiceNow/servicenow-cli/releases/download/v1.1.3/snc-1.1.3-linux-x64-installer.run -O /tmp/snc-installer.run
-      chmod +x /tmp/snc-installer.run
-      sudo /tmp/snc-installer.run --mode unattended
+      echo "Installing ServiceNow CLI..."
       npm install -g @servicenow/cli
-    command: echo "Environment ready! Type 'snc' to begin."
-    
-vscode:
-  extensions:
-    - ServiceNow.now-vscode
+    # The 'command' phase runs every time the workspace starts.
+    command: |
+      echo "ServiceNow CLI (snc) is ready to use!"
+      snc --version
