@@ -5,6 +5,7 @@ tasks:
     # The 'init' phase runs during workspace prebuilds, saving you time on startup.
     init: |
       echo "Installing ServiceNow CLI..."
+      nvm install 14 && nvm use 14
       npm install -g @servicenow/cli
     # The 'command' phase runs every time the workspace starts.
     command: |
