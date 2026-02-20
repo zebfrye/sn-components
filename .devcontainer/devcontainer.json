@@ -3,7 +3,11 @@
   "image": "mcr.microsoft.com/devcontainers/javascript-node:16",
   "postCreateCommand": "bash .devcontainer/setup.sh",
   "forwardPorts": [],
-  "extensions": [
-    "dbaeumer.vscode-eslint"
-  ]
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  }
 }
