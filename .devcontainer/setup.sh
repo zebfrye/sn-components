@@ -4,6 +4,7 @@ set -e
 # Install dbus to satisfy installer dependencies
 sudo apt-get update
 sudo apt-get install -y dbus-x11
+sudo apt-get install -y dbus-x11 libsecret-tools gnome-keyring
 
 # Download ServiceNow CLI zip
 curl -L https://github.com/ServiceNow/servicenow-cli/releases/download/v1.1.3/snc-1.1.3.zip -o /tmp/snc.zip
